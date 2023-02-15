@@ -15,12 +15,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //
   ToDoDataBase db = ToDoDataBase();
+  List toDoList1 = [];
 
   final TextEditingController _addTaskDialogController = TextEditingController();
 
   @override
   void initState() {
     db.createInitialData();
+    toDoList1 = db.toDoList;
     super.initState();
   }
 
@@ -40,10 +42,18 @@ class _HomePageState extends State<HomePage> {
   // save new task
   void saveNewTask() {
     setState(() {
-      db.toDoList.add(_addTaskDialogController.text);
+      toDoList1.add(_addTaskDialogController.text);
       _addTaskDialogController.clear();
     });
     Navigator.of(context).pop();
+  }
+
+  // delete task
+  void deleteTask(int index) {
+    setState(() {
+      toDoList1.removeAt(index);
+      print(toDoList1.length);
+    });
   }
 
   @override
@@ -62,11 +72,12 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add, color: iconsColor),
       ),
       body: ListView.builder(
-        itemCount: db.toDoList.length,
+        itemCount: toDoList1.length,
         itemBuilder: (BuildContext context, int index) {
           return Center(
               child: TaskTile(
-            taskName: db.toDoList[index],
+            taskName: toDoList1[index],
+            deleteFunction: () => deleteTask(index),
           ));
         },
       ),

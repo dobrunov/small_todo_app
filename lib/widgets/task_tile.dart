@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import '../app_styles/color_styles.dart';
 
 class TaskTile extends StatelessWidget {
-  const TaskTile({
+  TaskTile({
     Key? key,
     required this.taskName,
+    required this.deleteFunction,
   }) : super(key: key);
 
   final String taskName;
+  // Function(BuildContext)? deleteFunction;
+  void Function()? deleteFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +24,17 @@ class TaskTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               taskName,
               style: const TextStyle(
                 color: tileTextColor,
               ),
+            ),
+            InkWell(
+              onTap: deleteFunction,
+              child: const Icon(Icons.remove_circle, color: iconsColor),
             ),
           ],
         ),
