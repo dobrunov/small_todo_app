@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:small_todo_app/screens/home_page.dart';
+import 'package:small_todo_app/styles/color_styles.dart';
 
 void main() {
   runApp(const MySmallTodoApp());
@@ -13,7 +14,7 @@ class MySmallTodoApp extends StatelessWidget {
     return MaterialApp(
       title: 'Small todo app',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: primaryColor,
       ),
       home: const HomePage(),
     );

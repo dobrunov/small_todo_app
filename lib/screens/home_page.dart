@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../styles/color_styles.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -11,17 +13,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: const Text(
           'Small todo app',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: appBarTextColor),
         ),
         elevation: 0,
       ),
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
-        child: Icon(Icons.add, color: Colors.white),
+        child: Icon(Icons.add, color: iconsColor),
       ),
       body: ListView.builder(
         itemCount: 10,
