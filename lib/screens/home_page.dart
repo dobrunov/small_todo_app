@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         title: const Text(
-          'Small todo app',
+          'My to do list',
           style: TextStyle(color: appBarTextColor),
         ),
         actions: <Widget>[
