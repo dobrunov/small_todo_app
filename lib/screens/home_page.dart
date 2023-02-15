@@ -65,11 +65,19 @@ class _HomePageState extends State<HomePage> {
           'Small todo app',
           style: TextStyle(color: appBarTextColor),
         ),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: createNewTask,
+              child: const Icon(
+                Icons.add,
+                size: 28.0,
+              ),
+            ),
+          ),
+        ],
         elevation: 0,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: createNewTask,
-        child: const Icon(Icons.add, color: iconsColor),
       ),
       body: ListView.builder(
         itemCount: toDoList1.length,
