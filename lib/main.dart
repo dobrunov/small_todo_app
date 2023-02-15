@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:small_todo_app/screens/home_page.dart';
-import 'package:small_todo_app/styles/color_styles.dart';
+
+import 'app_styles/color_styles.dart';
 
 void main() {
   runApp(const MySmallTodoApp());
