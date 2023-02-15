@@ -61,13 +61,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        title: const Text(
-          'My to do list',
-          style: TextStyle(color: appBarTextColor),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 15.0),
+          child: Text(
+            'My to do list',
+            style: TextStyle(color: appBarTextColor),
+          ),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 30.0),
             child: GestureDetector(
               onTap: createNewTask,
               child: const Icon(
