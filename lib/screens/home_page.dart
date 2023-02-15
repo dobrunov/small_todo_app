@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_styles/color_styles.dart';
+import '../data/todo_database.dart';
 import '../widgets/task_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  ToDoDataBase db = ToDoDataBase();
+
+  @override
+  void initState() {
+    db.createInitialData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +36,11 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.add, color: iconsColor),
       ),
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: db.toDoList.length,
         itemBuilder: (BuildContext context, int index) {
           return Center(
               child: TaskTile(
-            taskName: 'Task $index',
+            taskName: db.toDoList[index],
           ));
         },
       ),
