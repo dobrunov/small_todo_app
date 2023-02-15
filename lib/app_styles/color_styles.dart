@@ -13,6 +13,8 @@ const iconsColor = white;
 const tileBackgroundColor = Color(0xffc2deec);
 const tileTextColor = Color(0xff40484d);
 
-const dialogBackgroundColor = Color(0xffd2f1d5);
+const dialogBackgroundColor = Color(0xffccebfa);
 const saveButtonColor = Color(0x74349f37);
 const cancelButtonColor = Color(0xff912937);
+
+const buttonTextColor = white;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../app_styles/color_styles.dart';
+
 class DialogButton extends StatelessWidget {
   final String text;
   final Color buttonColor;
@@ -17,7 +19,10 @@ class DialogButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       color: buttonColor,
-      child: Text(text),
+      child: Text(
+        text,
+        style: const TextStyle(color: buttonTextColor),
+      ),
     );
   }
 }

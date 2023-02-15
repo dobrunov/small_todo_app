@@ -13,6 +13,7 @@ class MySmallTodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Small todo app',
       theme: ThemeData(
         primarySwatch: primaryColor,
