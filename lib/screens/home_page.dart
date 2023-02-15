@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_styles/color_styles.dart';
+import '../widgets/task_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,7 +29,10 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder(
         itemCount: 10,
         itemBuilder: (BuildContext context, int index) {
-          return Center(child: Text('Task $index'));
+          return Center(
+              child: TaskTile(
+            taskName: 'Task $index',
+          ));
         },
       ),
     );
